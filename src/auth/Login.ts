@@ -1,5 +1,5 @@
 import { BaseRes } from "../Base";
-import { UserID, VerificationKey } from "@covrt-types/";
+import { EncUserKeyPair, SymEnc, SymEncType, UserID, VerificationKey } from "@covrt-types/";
 
 export type LoginReq = {
 	email: string;
@@ -14,6 +14,9 @@ export enum LoginCode{
 export type LoginData = {
 	[LoginCode.Success]: {
 		uid: UserID;
+		token: string;
+		sym: SymEnc<SymEncType.SymKey>;
+		keyPair: EncUserKeyPair;
 	};
 	[LoginCode.NoMatch]: null;
 }
