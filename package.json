@@ -5,8 +5,5 @@
   "repository": "https://github.com/MangoCubes/covrt-reqres.git",
   "author": "MangoCubes <10383115+MangoCubes@users.noreply.github.com>",
   "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "covrt-types": "file:../covrt-types"
-  }
+  "private": true
 }
