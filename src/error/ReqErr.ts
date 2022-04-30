@@ -1,4 +1,4 @@
-import { BaseRes } from "../BaseRes";
+import { BaseRes } from "../Base";
 
 export enum ReqErrCode{
 	MissingBody = 10000

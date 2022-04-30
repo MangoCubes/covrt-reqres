@@ -1,4 +1,4 @@
-import { BaseRes } from "../BaseRes";
+import { BaseRes } from "../Base";
 
 export enum ServerErrCode{
 	Default = -99999,
