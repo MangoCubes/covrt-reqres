@@ -16,7 +16,9 @@ export enum CreateGroupCode{
 
 type Success = {
 	res: CreateGroupCode.Success;
-	gid: GroupID;
+	data: {
+		gid: GroupID;
+	}
 }
 
 type DefaultRes = {
@@ -25,7 +27,9 @@ type DefaultRes = {
 
 type InvalidPermission = {
 	res: CreateGroupCode.InvalidPermission;
-	permission: string;
+	data: {
+		permission: string;
+	}
 }
 
 export type CreateGroupRes = (BaseRes<'CreateGroup'> & (Success | DefaultRes | InvalidPermission)) | ServerErr;

@@ -16,7 +16,9 @@ export enum CreateVaultCode{
 
 type Success = {
 	res: CreateVaultCode.Success;
-	vid: VaultID;
+	data: {
+		vid: VaultID;
+	}
 }
 
 type DefaultRes = {
@@ -25,7 +27,9 @@ type DefaultRes = {
 
 type Duplicate = {
 	res: CreateVaultCode.Duplicate;
-	vid: VaultID;
+	data: {
+		vid: VaultID;
+	}
 }
 
 export type CreateVaultRes = (BaseRes<'CreateVault'> & (Success | DefaultRes | Duplicate)) | ServerErr;

@@ -14,10 +14,12 @@ export enum LoginCode{
 
 type Success = {
 	res: LoginCode.Success;
-	uid: UserID;
-	token: string;
-	sym: SymEnc<SymEncType.UserSymKey>;
-	keyPair: EncUserKeyPair;
+	data: {
+		uid: UserID;
+		token: string;
+		sym: SymEnc<SymEncType.UserSymKey>;
+		keyPair: EncUserKeyPair;
+	}
 }
 
 type DefaultRes = {

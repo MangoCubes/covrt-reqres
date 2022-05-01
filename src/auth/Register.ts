@@ -16,10 +16,12 @@ export enum RegisterCode{
 
 type Success = {
 	res: RegisterCode.Success;
-	uid: UserID;
-	token: string;
-	sym: SymEnc<SymEncType.UserSymKey>;
-	keyPair: EncUserKeyPair;
+	data: {
+		uid: UserID;
+		token: string;
+		sym: SymEnc<SymEncType.UserSymKey>;
+		keyPair: EncUserKeyPair;
+	}
 }
 
 type DefaultRes = {
