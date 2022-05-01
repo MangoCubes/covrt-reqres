@@ -1,5 +1,5 @@
 import { BaseRes } from "../Base";
-import { EncUserKeyPair, SymEnc, SymEncType, UserID, VerificationKey } from "@covrt-types/";
+import { EncUserKeyPair, SymEnc, SymEncType, UserID, VerificationKey } from "@covrt-types";
 
 export type RegisterRequest = {
 	email: string;
