@@ -4,7 +4,7 @@ import { EncUserKeyPair, SymEnc, SymEncType, UserID, VerificationKey } from "@co
 export type RegisterRequest = {
 	email: string;
 	key: VerificationKey;
-	symKey: SymEnc<SymEncType.SymKey>;
+	symKey: SymEnc<SymEncType.UserSymKey>;
 	keyPair: EncUserKeyPair;
 }
 
@@ -17,7 +17,7 @@ export type RegisterData = {
 	[RegisterCode.Success]: {
 		uid: UserID;
 		token: string;
-		sym: SymEnc<SymEncType.SymKey>;
+		sym: SymEnc<SymEncType.UserSymKey>;
 		keyPair: EncUserKeyPair;
 	};
 	[RegisterCode.AlreadyRegistered]: null;
