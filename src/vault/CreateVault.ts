@@ -1,6 +1,6 @@
 import { SymEnc, SymEncType, VaultID } from '@covrt-types';
 import { BaseRes } from '../Base';
-import { ServerErr } from '../error/ServerErr';
+import { ServerErrRes } from '../error/ServerErr';
 
 export type CreateVaultReq = {
 	vault: string,
@@ -16,9 +16,7 @@ export enum CreateVaultCode{
 
 type Success = {
 	res: CreateVaultCode.Success;
-	data: {
-		vid: VaultID;
-	}
+	vid: VaultID;
 }
 
 type DefaultRes = {
@@ -27,9 +25,9 @@ type DefaultRes = {
 
 type Duplicate = {
 	res: CreateVaultCode.Duplicate;
-	data: {
-		vid: VaultID;
-	}
+	duplicateOf: VaultID;
 }
 
-export type CreateVaultRes = (BaseRes<'CreateVault'> & (Success | DefaultRes | Duplicate)) | ServerErr;
+export type CreateVaultData = Success | DefaultRes | Duplicate;
+
+export type CreateVaultRes = (BaseRes<'CreateVault'> & CreateVaultData) | ServerErrRes;

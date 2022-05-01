@@ -1,5 +1,5 @@
 import { BaseRes } from "../Base";
-import { ServerErr } from "./ServerErr";
+import { ServerErrRes } from "./ServerErr";
 
 export enum ReqErrCode{
 	MissingBody,
@@ -12,7 +12,9 @@ type DefaultRes = {
 
 type MissingProperty = {
 	res: ReqErrCode.MissingProperty;
-	data: string;
+	prop: string;
 }
 
-export type ReqErr = (BaseRes<'ReqErr'> & (DefaultRes | MissingProperty)) | ServerErr;
+export type ReqErrData = DefaultRes | MissingProperty;
+
+export type ReqErrRes = (BaseRes<'ReqErr'> & ReqErrData) | ServerErrRes;

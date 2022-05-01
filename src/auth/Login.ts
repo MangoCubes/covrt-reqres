@@ -1,6 +1,6 @@
 import { BaseRes } from "../Base";
 import { EncUserKeyPair, SymEnc, SymEncType, UserID, VerificationKey } from "@covrt-types";
-import { ServerErr } from "../error/ServerErr";
+import { ServerErrRes } from "../error/ServerErr";
 
 export type LoginReq = {
 	email: string;
@@ -14,16 +14,16 @@ export enum LoginCode{
 
 type Success = {
 	res: LoginCode.Success;
-	data: {
-		uid: UserID;
-		token: string;
-		sym: SymEnc<SymEncType.UserSymKey>;
-		keyPair: EncUserKeyPair;
-	}
+	uid: UserID;
+	token: string;
+	sym: SymEnc<SymEncType.UserSymKey>;
+	keyPair: EncUserKeyPair;
 }
 
 type DefaultRes = {
 	res: LoginCode.NoMatch;
 }
 
-export type LoginRes = (BaseRes<'Login'> & (Success | DefaultRes)) | ServerErr;
+export type LoginData = Success | DefaultRes;
+
+export type LoginRes = (BaseRes<'Login'> & LoginData) | ServerErrRes;

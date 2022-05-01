@@ -9,4 +9,6 @@ type DefaultRes = {
 	res: ServerErrCode.Default | ServerErrCode.SQLErr;
 }
 
-export type ServerErr = BaseRes<'ServerErr'> & (DefaultRes);
+export type ServerErrData = DefaultRes;
+
+export type ServerErrRes = BaseRes<'ServerErr'> & ServerErrData;
