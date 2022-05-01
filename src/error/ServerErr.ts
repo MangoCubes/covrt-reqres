@@ -1,13 +1,12 @@
-import { ResTemplate } from "../Base";
+import { BaseRes } from "../Base";
 
 export enum ServerErrCode{
-	Default = -99999,
-	SQLErr = -10000,
+	Default,
+	SQLErr,
 }
 
-export type ServerErrData = {
-	[ServerErrCode.Default]: null,
-	[ServerErrCode.SQLErr]: null
+type DefaultRes = {
+	res: ServerErrCode.Default | ServerErrCode.SQLErr;
 }
 
-export type ServerErr = ResTemplate<'ServerErr', ServerErrCode, ServerErrData>;
+export type ServerErr = BaseRes<'ServerErr'> & (DefaultRes);

@@ -13,14 +13,18 @@ export enum CreateVaultCode{
 	Duplicate
 }
 
-export type CreateVaultData = {
-	[CreateVaultCode.Success]: {
-		vid: VaultID;
-	};
-	[CreateVaultCode.NotAllowed]: null;
-	[CreateVaultCode.Duplicate]: {
-		vid: VaultID;
-	};
+type Success = {
+	res: CreateVaultCode.Success;
+	vid: VaultID;
 }
 
-export type CreateVaultRes = BaseRes<'CreateVault', CreateVaultCode, CreateVaultData>;
+type DefaultRes = {
+	res: CreateVaultCode.NotAllowed;
+}
+
+type Duplicate = {
+	res: CreateVaultCode.Duplicate;
+	vid: VaultID;
+}
+
+export type CreateVaultRes = BaseRes<'CreateVault'> & (Success | DefaultRes | Duplicate);

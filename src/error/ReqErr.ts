@@ -1,11 +1,17 @@
-import { ResTemplate } from "../Base";
+import { BaseRes } from "../Base";
 
 export enum ReqErrCode{
-	MissingBody = 10000
+	MissingBody,
+	MissingProperty,
 }
 
-export type ReqErrData = {
-	[ReqErrCode.MissingBody]: string;
+type DefaultRes = {
+	res: ReqErrCode.MissingBody;
 }
 
-export type ReqErr = ResTemplate<'ReqErr', ReqErrCode, ReqErrData>;
+type MissingProperty = {
+	res: ReqErrCode.MissingProperty;
+	data: string;
+}
+
+export type ReqErr = BaseRes<'ReqErr'> & (DefaultRes | MissingProperty);

@@ -13,15 +13,18 @@ export enum CreateGroupCode{
 	Private
 }
 
-export type CreateGroupData = {
-	[CreateGroupCode.Success]: {
-		gid: GroupID;
-	};
-	[CreateGroupCode.NotAllowed]: null;
-	[CreateGroupCode.InvalidPermission]: {
-		permission: string;
-	};
-	[CreateGroupCode.Private]: null;
+type Success = {
+	res: CreateGroupCode.Success;
+	gid: GroupID;
 }
 
-export type CreateGroupRes = BaseRes<'CreateGroup', CreateGroupCode, CreateGroupData>;
+type DefaultRes = {
+	res: CreateGroupCode.NotAllowed | CreateGroupCode.Private;
+}
+
+type InvalidPermission = {
+	res: CreateGroupCode.InvalidPermission;
+	permission: string;
+}
+
+export type CreateGroupRes = BaseRes<'CreateGroup'> & (Success | DefaultRes | InvalidPermission);

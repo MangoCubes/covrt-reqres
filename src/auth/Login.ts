@@ -11,14 +11,16 @@ export enum LoginCode{
 	NoMatch,
 }
 
-export type LoginData = {
-	[LoginCode.Success]: {
-		uid: UserID;
-		token: string;
-		sym: SymEnc<SymEncType.UserSymKey>;
-		keyPair: EncUserKeyPair;
-	};
-	[LoginCode.NoMatch]: null;
+type Success = {
+	res: LoginCode.Success;
+	uid: UserID;
+	token: string;
+	sym: SymEnc<SymEncType.UserSymKey>;
+	keyPair: EncUserKeyPair;
 }
 
-export type LoginRes = BaseRes<'Login', LoginCode, LoginData>;
+type DefaultRes = {
+	res: LoginCode.NoMatch;
+}
+
+export type LoginRes = BaseRes<'Login'> & (Success | DefaultRes);
