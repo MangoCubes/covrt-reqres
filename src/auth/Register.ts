@@ -1,5 +1,6 @@
 import { BaseRes } from "../Base";
 import { EncUserKeyPair, SymEnc, SymEncType, UserID, VerificationKey } from "@covrt-types";
+import { ServerErr } from "../error/ServerErr";
 
 export type RegisterReq = {
 	email: string;
@@ -25,4 +26,4 @@ type DefaultRes = {
 	res: RegisterCode.AlreadyRegistered;
 }
 
-export type RegisterRes = BaseRes<'Register'> & (Success | DefaultRes);
+export type RegisterRes = (BaseRes<'Register'> & (Success | DefaultRes)) | ServerErr;

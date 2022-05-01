@@ -1,5 +1,6 @@
 import { BaseRes } from "../Base";
 import { EncUserKeyPair, SymEnc, SymEncType, UserID, VerificationKey } from "@covrt-types";
+import { ServerErr } from "../error/ServerErr";
 
 export type LoginReq = {
 	email: string;
@@ -23,4 +24,4 @@ type DefaultRes = {
 	res: LoginCode.NoMatch;
 }
 
-export type LoginRes = BaseRes<'Login'> & (Success | DefaultRes);
+export type LoginRes = (BaseRes<'Login'> & (Success | DefaultRes)) | ServerErr;
