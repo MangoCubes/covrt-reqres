@@ -1,6 +1,6 @@
+import { EncUserData } from "../../../covrt-types/dist";
 import { BaseRes } from "../Base";
 import { ServerErrRes } from "../error/ServerErr";
-import { AuthSuccess } from "./AuthSuccess";
 
 export enum TokenAuthCode{
 	Success,
@@ -12,6 +12,6 @@ type DefaultRes = {
     res: Exclude<TokenAuthCode, TokenAuthCode.Success>;
 }
 
-export type TokenAuthData = (AuthSuccess & {res: TokenAuthCode.Success}) | DefaultRes;
+export type TokenAuthData = (EncUserData & {res: TokenAuthCode.Success}) | DefaultRes;
 
 export type TokenAuthRes = (BaseRes<'TokenAuth'> & TokenAuthData) | ServerErrRes;
