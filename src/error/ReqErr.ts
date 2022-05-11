@@ -4,10 +4,12 @@ import { ServerErrRes } from "./ServerErr";
 export enum ReqErrCode{
 	MissingBody,
 	MissingProperty,
+	MissingToken,
+	InvalidToken
 }
 
 type DefaultRes = {
-	res: ReqErrCode.MissingBody;
+	res: ReqErrCode.MissingBody | ReqErrCode.MissingToken | ReqErrCode.InvalidToken;
 }
 
 type MissingProperty = {
