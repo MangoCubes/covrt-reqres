@@ -12,6 +12,6 @@ type DefaultRes = {
     res: Exclude<TokenAuthCode, TokenAuthCode.Success>;
 }
 
-export type TokenAuthData = (AuthSuccess & {res: TokenAuthCode.Success}) | DefaultRes;
+export type TokenAuthData = (Omit<AuthSuccess, 'token'> & {res: TokenAuthCode.Success}) | DefaultRes;
 
 export type TokenAuthRes = (BaseRes<'TokenAuth'> & TokenAuthData) | ServerErrRes;
