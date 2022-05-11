@@ -1,6 +1,7 @@
 import { BaseRes } from "../Base";
 import { EncUserKeyPair, SymEnc, SymEncType, UserID, VerificationKey } from "@covrt-types";
 import { ServerErrRes } from "../error/ServerErr";
+import { AuthSuccess } from "./AuthSuccess";
 
 export type RegisterReq = {
 	email: string;
@@ -14,18 +15,10 @@ export enum RegisterCode{
 	AlreadyRegistered,
 }
 
-type Success = {
-	res: RegisterCode.Success;
-	uid: UserID;
-	token: string;
-	sym: SymEnc<SymEncType.UserSymKey>;
-	keyPair: EncUserKeyPair;
-}
-
 type DefaultRes = {
-	res: RegisterCode.AlreadyRegistered;
+	res: Exclude<RegisterCode, RegisterCode.Success>;
 }
 
-export type RegisterData = Success | DefaultRes;
+export type RegisterData = (AuthSuccess & {res: RegisterCode.Success}) | DefaultRes;
 
 export type RegisterRes = (BaseRes<'Register'> & RegisterData) | ServerErrRes;
