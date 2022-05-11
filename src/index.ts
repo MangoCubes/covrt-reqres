@@ -4,5 +4,6 @@ export * from './Base';
 export * from './Any';
 export * from './auth/Login';
 export * from './auth/Register';
+export * from './auth/TokenAuth';
 export * from './vault/CreateGroup';
 export * from './vault/CreateVault';

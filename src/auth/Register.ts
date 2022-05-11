@@ -5,7 +5,7 @@ import { AuthSuccess } from "./AuthSuccess";
 
 export type RegisterReq = {
 	email: string;
-	key: VerificationKey;
+	verification: VerificationKey;
 	symKey: SymEnc<SymEncType.UserSymKey>;
 	keyPair: EncUserKeyPair;
 }
