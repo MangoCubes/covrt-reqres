@@ -1,3 +1,3 @@
-import { EncUserData } from "../../../covrt-types/dist";
+import { AccessToken, EncUserData } from "../../../covrt-types/dist";
 
-export type AuthSuccess = EncUserData & {token: string};
+export type AuthSuccess = EncUserData & {token: AccessToken};
