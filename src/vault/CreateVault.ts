@@ -1,4 +1,4 @@
-import { SymEnc, SymEncType, VaultID } from '@covrt-types';
+import { SymEnc, SymEncType, VaultID } from 'covrt-types';
 import { BaseRes } from '../Base';
 import { ServerErrRes } from '../error/ServerErr';
 

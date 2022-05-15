@@ -1,5 +1,5 @@
 import { BaseRes } from "../Base";
-import { VerificationKey } from "@covrt-types";
+import { VerificationKey } from "covrt-types";
 import { ServerErrRes } from "../error/ServerErr";
 import { AuthSuccess } from "./AuthSuccess";
 

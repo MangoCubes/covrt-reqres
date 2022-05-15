@@ -1,5 +1,5 @@
 import { BaseRes } from "../Base";
-import { EncUserKeyPair, SymEnc, SymEncType, VerificationKey } from "@covrt-types";
+import { EncUserKeyPair, SymEnc, SymEncType, VerificationKey } from "covrt-types";
 import { ServerErrRes } from "../error/ServerErr";
 import { AuthSuccess } from "./AuthSuccess";
 

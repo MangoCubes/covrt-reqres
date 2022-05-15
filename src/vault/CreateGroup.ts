@@ -1,4 +1,4 @@
-import { GroupID, SymEnc, SymEncType } from '@covrt-types';
+import { GroupID, SymEnc, SymEncType } from 'covrt-types';
 import { BaseRes } from '../Base';
 import { ServerErrRes } from '../error/ServerErr';
 
