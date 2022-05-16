@@ -1,4 +1,4 @@
-import { EncContainer, FullGroupData, PrivateVault, PublicVault } from "../../../covrt-types/dist";
+import { EncContainer, FullGroupData, PrivateVault, PublicVault } from "covrt-types";
 import { BaseRes } from "../Base";
 import { ServerErrRes } from "../error/ServerErr";
 

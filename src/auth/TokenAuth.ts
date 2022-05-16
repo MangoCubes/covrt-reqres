@@ -1,4 +1,4 @@
-import { EncUserData } from "../../../covrt-types/dist";
+import { EncUserData } from "covrt-types";
 import { BaseRes } from "../Base";
 import { ServerErrRes } from "../error/ServerErr";
 
