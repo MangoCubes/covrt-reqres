@@ -1,4 +1,3 @@
-export * from './auth/AuthSuccess';
 export * from './auth/Login';
 export * from './auth/Register';
 export * from './auth/TokenAuth';

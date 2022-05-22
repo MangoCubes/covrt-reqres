@@ -1,7 +1,6 @@
 import { BaseRes } from "../Base";
-import { VerificationKey } from "covrt-types";
+import { AccessToken, VerificationKey } from "covrt-types";
 import { ServerErrRes } from "../error/ServerErr";
-import { AuthSuccess } from "./AuthSuccess";
 
 export type LoginReq = {
 	email: string;
@@ -17,6 +16,11 @@ type DefaultRes = {
 	res: Exclude<LoginCode, LoginCode.Success>;
 }
 
-export type LoginData = (AuthSuccess & {res: LoginCode.Success}) | DefaultRes;
+type Success = {
+	res: LoginCode.Success;
+	token: AccessToken;
+}
+
+export type LoginData = Success | DefaultRes;
 
 export type LoginRes = (BaseRes<'Login'> & LoginData) | ServerErrRes;

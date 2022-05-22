@@ -5,7 +5,7 @@ import { ServerErrRes } from '../error/ServerErr';
 export type CreateVaultReq = {
 	vault: string,
 	isPrivate: boolean,
-	contKey: SymEnc<SymEncType.ContSymKey>;
+	contKey: SymEnc<SymEncType.ContainerSymKey>;
 }
 
 export enum CreateVaultCode{

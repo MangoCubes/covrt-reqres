@@ -1,4 +1,4 @@
-import { EncContainer, FullGroupData, PrivateVault, PublicVault } from "covrt-types";
+import { EncContainer, FullGroupData, Vault } from "covrt-types";
 import { BaseRes } from "../Base";
 import { ServerErrRes } from "../error/ServerErr";
 
@@ -10,7 +10,7 @@ export enum GetVaultDataCode{
 
 type Success = {
 	res: GetVaultDataCode.Success;
-	vault: PrivateVault | PublicVault;
+	vault: Vault;
     groups: FullGroupData[];
     containers: EncContainer[];
 }
