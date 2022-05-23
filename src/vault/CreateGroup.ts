@@ -1,6 +1,6 @@
 import { GroupID, SymEnc, SymEncType } from 'covrt-types';
 import { BaseRes } from '../Base';
-import { ServerErrRes } from '../error/ServerErr';
+import { ReqErrRes } from '../error/ReqErr';
 
 export type CreateGroupReq = {
     name: string;
@@ -30,4 +30,4 @@ type InvalidPermission = {
 
 export type CreateGroupData = Success | DefaultRes | InvalidPermission;
 
-export type CreateGroupRes = (BaseRes<'CreateGroup'> & CreateGroupData) | ServerErrRes;
+export type CreateGroupRes = (BaseRes<'CreateGroup'> & CreateGroupData) | ReqErrRes;

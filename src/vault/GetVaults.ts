@@ -1,6 +1,6 @@
 import { Vault } from "covrt-types";
 import { BaseRes } from "../Base";
-import { ServerErrRes } from "../error/ServerErr";
+import { ReqErrRes } from "../error/ReqErr";
 
 export enum GetVaultsCode{
 	Success
@@ -13,4 +13,4 @@ type Success = {
 
 export type GetVaultsData = (Success);
 
-export type GetVaultsRes = (BaseRes<'GetVaults'> & GetVaultsData) | ServerErrRes;
+export type GetVaultsRes = (BaseRes<'GetVaults'> & GetVaultsData) | ReqErrRes;

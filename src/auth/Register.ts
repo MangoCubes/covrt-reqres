@@ -1,6 +1,6 @@
 import { BaseRes } from "../Base";
-import { AccessToken, EncKeyPair, KeyPairType, SymEnc, SymEncType, VerificationKey } from "covrt-types";
-import { ServerErrRes } from "../error/ServerErr";
+import { AccessToken, EncKeyPair, KeyPairType, SymEnc, SymEncType, UserID, VerificationKey } from "covrt-types";
+import { ReqErrRes } from "../error/ReqErr";
 
 export type RegisterReq = {
 	email: string;
@@ -21,8 +21,9 @@ type DefaultRes = {
 type Success = {
 	res: RegisterCode.Success;
 	token: AccessToken;
+	uid: UserID;
 }
 
 export type RegisterData = Success | DefaultRes;
 
-export type RegisterRes = (BaseRes<'Register'> & RegisterData) | ServerErrRes;
+export type RegisterRes = (BaseRes<'Register'> & RegisterData) | ReqErrRes;

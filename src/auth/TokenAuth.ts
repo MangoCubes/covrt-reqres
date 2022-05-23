@@ -1,6 +1,6 @@
 import { EncUserData } from "covrt-types";
 import { BaseRes } from "../Base";
-import { ServerErrRes } from "../error/ServerErr";
+import { ReqErrRes } from "../error/ReqErr";
 
 export enum TokenAuthCode{
 	Success,
@@ -14,4 +14,4 @@ type DefaultRes = {
 
 export type TokenAuthData = (EncUserData & {res: TokenAuthCode.Success}) | DefaultRes;
 
-export type TokenAuthRes = (BaseRes<'TokenAuth'> & TokenAuthData) | ServerErrRes;
+export type TokenAuthRes = (BaseRes<'TokenAuth'> & TokenAuthData) | ReqErrRes;
