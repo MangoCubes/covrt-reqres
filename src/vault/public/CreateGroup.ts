@@ -1,10 +1,12 @@
-import { GroupID, SymEnc, SymEncType } from 'covrt-types';
+import { EncKeyPair, GroupID, KeyPairType } from 'covrt-types';
+import { AsymEnc, AsymEncType } from 'covrt-types/dist/encryption/AsymEnc';
 import { BaseRes } from '../../Base';
 import { ReqErrRes } from '../../error/ReqErr';
 
 export type CreateGroupReq = {
     name: string;
-    key: SymEnc<SymEncType.GroupSymKey>;
+    key: AsymEnc<AsymEncType.GroupSymKey>;
+	keyPair: EncKeyPair<KeyPairType.Group>;
 }
 
 export enum CreateGroupCode{
