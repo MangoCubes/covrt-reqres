@@ -1,12 +1,16 @@
-import { SymEnc, SymEncType, VaultID } from 'covrt-types';
+import { VaultID } from 'covrt-types';
 import { BaseRes } from '../Base';
 import { ReqErrRes } from '../error/ReqErr';
+import { CreateContainerReq } from './public/CreateContainer';
+import { CreateGroupReq } from './public/CreateGroup';
 
 export type CreateVaultReq = {
 	vault: string,
 	isPrivate: boolean,
-	contKey: SymEnc<SymEncType.ContainerSymKey>;
+	container: Omit<CreateContainerReq, 'name'>;
+	group: Omit<CreateGroupReq, 'name'>;
 }
+
 
 export enum CreateVaultCode{
 	Success,
