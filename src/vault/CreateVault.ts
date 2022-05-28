@@ -1,16 +1,15 @@
 import { VaultID } from 'covrt-types';
+import { AsymEnc, AsymEncType } from 'covrt-types/dist/encryption/AsymEnc';
 import { BaseRes } from '../Base';
 import { ReqErrRes } from '../error/ReqErr';
-import { CreateContainerReq } from './public/CreateContainer';
 import { CreateGroupReq } from './public/CreateGroup';
 
 export type CreateVaultReq = {
-	vault: string,
-	isPrivate: boolean,
-	container: Omit<CreateContainerReq, 'name'>;
+	vault: string;
+	isPrivate: boolean;
 	group: Omit<CreateGroupReq, 'name'>;
+	groupKey: AsymEnc<AsymEncType.GroupSymKey>;
 }
-
 
 export enum CreateVaultCode{
 	Success,

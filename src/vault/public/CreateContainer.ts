@@ -1,5 +1,4 @@
-import { ContainerID, EncKeyPair, KeyPairType } from "covrt-types";
-import { AsymEnc, AsymEncType } from "covrt-types/dist/encryption/AsymEnc";
+import { AsymEnc, AsymEncType, ContainerID, EncKeyPair, KeyPairType } from "covrt-types";
 import { BaseRes } from "../../Base";
 import { ReqErrRes } from "../../error/ReqErr";
 
