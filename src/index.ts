@@ -11,6 +11,7 @@ export * from './vault/public/CreateContainer';
 export * from './vault/CreateFields';
 export * from './vault/CreateItems';
 export * from './vault/CreateVault';
+export * from './vault/GetContainerData';
 export * from './vault/GetVaultData';
 export * from './vault/GetVaults';
 
