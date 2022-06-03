@@ -1,13 +1,24 @@
 import { VaultID } from 'covrt-types';
 import { BaseRes } from '../Base';
 import { ReqErrRes } from '../error/ReqErr';
+import { CreateContainerReq } from './public/CreateContainer';
 import { CreateGroupReq } from './public/CreateGroup';
 
-export type CreateVaultReq = {
+export type CreateVaultReqBase = {
 	vault: string;
-	isPrivate: boolean;
 	group: Omit<CreateGroupReq, 'name'>;
 }
+
+type Private = {
+	isPrivate: true;
+	container: Omit<CreateContainerReq, 'name'>;
+}
+
+type Public = {
+	isPrivate: false;
+}
+
+export type CreateVaultReq = CreateVaultReqBase & (Private | Public);
 
 export enum CreateVaultCode{
 	Success,
