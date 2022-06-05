@@ -1,6 +1,6 @@
 import { EncContainer } from "covrt-types";
-import { BaseRes } from "../../Base";
-import { ReqErrRes } from "../../error/ReqErr";
+import { BaseRes } from "../Base";
+import { ReqErrRes } from "../error/ReqErr";
 
 export enum GetContainersCode{
 	Success,
