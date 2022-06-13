@@ -1,4 +1,4 @@
-import { FullEncContainerData } from "covrt-types";
+import { FullEncContainerData, GroupData } from "covrt-types";
 import { BaseRes } from "../Base";
 import { ReqErrRes } from "../error/ReqErr";
 
@@ -10,6 +10,7 @@ export enum GetAllContainerDataCode{
 type Success = {
 	res: GetAllContainerDataCode.Success;
 	data: FullEncContainerData[];
+	group: GroupData;
 }
 
 type Failure = {
