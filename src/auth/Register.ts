@@ -9,8 +9,8 @@ export type RegisterReq = {
 	keyPair: EncKeyPair<KeyPairType.User>;
 }
 
-export enum RegisterCode{
-	Success,
+export enum RegisterCode {
+	Success = 1,
 	AlreadyRegistered,
 }
 

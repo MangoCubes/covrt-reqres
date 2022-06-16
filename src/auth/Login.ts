@@ -7,8 +7,8 @@ export type LoginReq = {
 	verification: VerificationKey;
 }
 
-export enum LoginCode{
-	Success,
+export enum LoginCode {
+	Success = 1,
 	NoMatch,
 }
 

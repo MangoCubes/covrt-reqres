@@ -2,8 +2,8 @@ import { EncUserData } from "covrt-types";
 import { BaseRes } from "../Base";
 import { ReqErrRes } from "../error/ReqErr";
 
-export enum TokenAuthCode{
-	Success,
+export enum TokenAuthCode {
+	Success = 1,
 	NoToken,
     InvalidToken
 }

@@ -2,8 +2,8 @@ import { FullEncContainerData } from "covrt-types";
 import { BaseRes } from "../Base";
 import { ReqErrRes } from "../error/ReqErr";
 
-export enum GetContainerDataCode{
-	Success,
+export enum GetContainerDataCode {
+	Success = 1,
     InvalidContainer
 }
 

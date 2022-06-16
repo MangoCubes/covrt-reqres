@@ -2,8 +2,8 @@ import { EncContainer } from "covrt-types";
 import { BaseRes } from "../Base";
 import { ReqErrRes } from "../error/ReqErr";
 
-export enum GetContainersCode{
-	Success,
+export enum GetContainersCode {
+	Success = 1,
     InvalidVault
 }
 

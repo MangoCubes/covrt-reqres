@@ -7,8 +7,8 @@ export type CreateFieldsReq = {
 	data: EncFieldData[];
 }
 
-export enum CreateFieldsCode{
-	Success,
+export enum CreateFieldsCode {
+	Success = 1,
 	InvalidContainer
 }
 

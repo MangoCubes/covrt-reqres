@@ -1,8 +1,8 @@
 import { BaseRes } from "../Base";
 import { ReqErrRes } from "../error/ReqErr";
 
-export enum DeleteVaultCode{
-	Success,
+export enum DeleteVaultCode {
+	Success = 1,
     InvalidVault,
     NotAllowed,
 }

@@ -2,8 +2,8 @@ import { EncContainer, FullGroupData, Vault } from "covrt-types";
 import { BaseRes } from "../Base";
 import { ReqErrRes } from "../error/ReqErr";
 
-export enum GetVaultDataCode{
-	Success,
+export enum GetVaultDataCode {
+	Success = 1,
     InvalidVault,
     
 }

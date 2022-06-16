@@ -8,8 +8,8 @@ export type CreateContainerReq = {
     keyPair: EncKeyPair<KeyPairType.Container>;
 }
 
-export enum CreateContainerCode{
-	Success,
+export enum CreateContainerCode {
+	Success = 1,
 	NotAllowed,
     InvalidName,
 	Private

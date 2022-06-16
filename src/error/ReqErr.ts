@@ -1,8 +1,8 @@
 import { BaseRes } from "../Base";
 import { ServerErrRes } from "./ServerErr";
 
-export enum ReqErrCode{
-	MissingBody,
+export enum ReqErrCode {
+	MissingBody = 1,
 	MissingProperty,
 	MissingToken,
 	InvalidToken

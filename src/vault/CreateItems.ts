@@ -7,8 +7,8 @@ export type CreateItemsReq = {
 	data: EncItemData[];
 }
 
-export enum CreateItemsCode{
-	Success,
+export enum CreateItemsCode {
+	Success = 1,
 	InvalidContainer
 }
 

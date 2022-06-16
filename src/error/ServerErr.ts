@@ -1,7 +1,7 @@
 import { BaseRes } from "../Base";
 
-export enum ServerErrCode{
-	Default,
+export enum ServerErrCode {
+	Default = 1,
 	SQLErr,
 }
 

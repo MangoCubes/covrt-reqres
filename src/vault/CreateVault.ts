@@ -20,8 +20,8 @@ type Public = {
 
 export type CreateVaultReq = CreateVaultReqBase & (Private | Public);
 
-export enum CreateVaultCode{
-	Success,
+export enum CreateVaultCode {
+	Success = 1,
 	NotAllowed,
 	Duplicate
 }

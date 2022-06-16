@@ -9,8 +9,8 @@ export type CreateGroupReq = {
 	keyPair: EncKeyPair<KeyPairType.Group>;
 }
 
-export enum CreateGroupCode{
-	Success,
+export enum CreateGroupCode {
+	Success = 1,
 	NotAllowed,
 	InvalidPermission,
 	Private
