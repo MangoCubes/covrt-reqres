@@ -4,21 +4,12 @@ import { ReqErrRes } from '../error/ReqErr';
 import { CreateContainerReq } from './public/CreateContainer';
 import { CreateGroupReq } from './public/CreateGroup';
 
-export type CreateVaultReqBase = {
+export type CreateVaultReq = {
 	vault: string;
 	group: Omit<CreateGroupReq, 'name'>;
-}
-
-type Private = {
-	isPrivate: true;
+	isPrivate: boolean;
 	container: Omit<CreateContainerReq, 'name'>;
 }
-
-type Public = {
-	isPrivate: false;
-}
-
-export type CreateVaultReq = CreateVaultReqBase & (Private | Public);
 
 export enum CreateVaultCode {
 	Success = 1,
