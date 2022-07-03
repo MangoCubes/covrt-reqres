@@ -10,9 +10,7 @@ export type CreateContainerReq = {
 
 export enum CreateContainerCode {
 	Success = 1,
-	NotAllowed,
-    InvalidName,
-	Private
+	InvalidVault
 }
 
 type Success = {
@@ -26,4 +24,4 @@ type Failure = {
 
 export type CreateContainerData = Success | Failure;
 
-export type CreateContainerRes = (BaseRes<'CreateGroup'> & CreateContainerData) | ReqErrRes;
+export type CreateContainerRes = (BaseRes<'CreateContainer'> & CreateContainerData) | ReqErrRes;
