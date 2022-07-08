@@ -7,12 +7,15 @@ export * from './error/ServerErr';
 
 export * from './vault/public/CreateGroup';
 export * from './vault/public/CreateContainer';
+export * from './vault/public/DeleteContainer';
+
 
 
 export * from './vault/CreateFields';
 export * from './vault/CreateFullItems';
 export * from './vault/CreateItems';
 export * from './vault/CreateVault';
+export * from './vault/DeleteItems';
 export * from './vault/DeleteVault';
 export * from './vault/GetAllContainerData';
 export * from './vault/GetContainerData';
