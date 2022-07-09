@@ -15,6 +15,6 @@ type Failure = {
     res: Omit<DeleteContainerCode, DeleteContainerCode.Success>;
 }
 
-export type DeleteContainerData = Success | Failure;a
+export type DeleteContainerData = Success | Failure;
 
 export type DeleteContainerRes = (BaseRes<'DeleteContainer'> & DeleteContainerData) | ReqErrRes;

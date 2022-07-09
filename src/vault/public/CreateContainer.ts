@@ -1,9 +1,9 @@
-import { AsymEnc, AsymEncType, ContainerID, EncKeyPair, KeyPairType } from "covrt-types";
+import { AsymEnc, AsymEncType, ContainerID, EncKeyPair, KeyPairType, SymEnc, SymEncType } from "covrt-types";
 import { BaseRes } from "../../Base";
 import { ReqErrRes } from "../../error/ReqErr";
 
 export type CreateContainerReq = {
-    name: string;
+	info: SymEnc<SymEncType.ContainerInfo>;
     key: AsymEnc<AsymEncType.ContainerSymKey>;
     keyPair: EncKeyPair<KeyPairType.Container>;
 }
