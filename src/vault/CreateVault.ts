@@ -6,9 +6,9 @@ import { CreateGroupReq } from './public/CreateGroup';
 
 export type CreateVaultReq = {
 	vault: string;
-	group: Omit<CreateGroupReq, 'name'>;
+	group: CreateGroupReq;
 	isPrivate: boolean;
-	container: Omit<CreateContainerReq, 'name'>;
+	container: CreateContainerReq;
 }
 
 export enum CreateVaultCode {
