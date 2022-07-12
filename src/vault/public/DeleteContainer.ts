@@ -4,7 +4,8 @@ import { BaseRes } from "../../Base";
 export enum DeleteContainerCode {
 	Success = 1,
 	InvalidVault,
-	InvalidContainer
+	InvalidContainer,
+	NotAllowed
 }
 
 type Success = {

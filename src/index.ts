@@ -8,6 +8,7 @@ export * from './error/ServerErr';
 export * from './vault/public/CreateGroup';
 export * from './vault/public/CreateContainer';
 export * from './vault/public/DeleteContainer';
+export * from './vault/public/GetGroups';
 
 
 
