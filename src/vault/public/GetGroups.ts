@@ -1,4 +1,4 @@
-import { GroupData, GroupID, UserID } from "covrt-types";
+import { BaseGroupData, GroupID, UserID } from "covrt-types";
 import { ReqErrRes } from "../..";
 import { BaseRes } from "../../Base";
 
@@ -7,16 +7,16 @@ export enum GetGroupsCode {
 	NotAllowed
 }
 
-type UserData = {
+export type GroupUserData = {
 	uid: UserID;
 	name: string;
-	group: GroupID;
+	gid: GroupID;
 }
 
 type Success = {
 	res: GetGroupsCode.Success;
-	groups: GroupData[];
-	users: UserData[];
+	groups: BaseGroupData[];
+	users: GroupUserData[];
 }
 
 type Failure = {
