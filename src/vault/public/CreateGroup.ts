@@ -4,7 +4,9 @@ import { BaseRes } from '../../Base';
 import { ReqErrRes } from '../../error/ReqErr';
 
 export type CreateGroupReq = {
-    info: SymEnc<SymEncType.GroupInfo>;
+    data: SymEnc<SymEncType.GroupInfo>;
+	pubData: SymEnc<SymEncType.GroupPubInfo>;
+	vKey: SymEnc<SymEncType.VaultKey>;
     key: AsymEnc<AsymEncType.GroupSymKey>;
 	keyPair: EncKeyPair<KeyPairType.Group>;
 }
