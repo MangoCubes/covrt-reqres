@@ -9,6 +9,7 @@ export * from './vault/public/CreateGroup';
 export * from './vault/public/CreateContainer';
 export * from './vault/public/DeleteContainer';
 export * from './vault/public/GetGroups';
+export * from './vault/public/InviteUser';
 
 
 
