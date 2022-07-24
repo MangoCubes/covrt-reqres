@@ -1,5 +1,7 @@
 import { ContainerID, EncFieldData, FieldID } from "covrt-types";
 import { BaseRes } from "../Base";
+import { InvalidErrRes, InvalidType } from "../error/InvalidErr";
+import { NotAllowedErrRes } from "../error/NotAllowedErr";
 import { ReqErrRes } from "../error/ReqErr";
 
 export type CreateFieldsReq = {
@@ -8,8 +10,7 @@ export type CreateFieldsReq = {
 }
 
 export enum CreateFieldsCode {
-	Success = 1,
-	InvalidContainer
+	Success = 1
 }
 
 type Success = {
@@ -23,4 +24,4 @@ type Failure = {
 
 export type CreateFieldsData = Success | Failure;
 
-export type CreateFieldsRes = (BaseRes<'CreateFields'> & CreateFieldsData) | ReqErrRes;
+export type CreateFieldsRes = (BaseRes<'CreateFields'> & CreateFieldsData) | ReqErrRes | NotAllowedErrRes | InvalidErrRes<InvalidType.Container | InvalidType.Vault | InvalidType.Item>;

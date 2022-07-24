@@ -1,5 +1,7 @@
 import { AsymEnc, AsymEncType, GroupID, VaultID } from "covrt-types";
 import { BaseRes } from "../../Base";
+import { InvalidErrRes, InvalidType } from "../../error/InvalidErr";
+import { NotAllowedErrRes } from "../../error/NotAllowedErr";
 import { ReqErrRes } from "../../error/ReqErr";
 
 export type InviteUserReq = {
@@ -10,8 +12,7 @@ export type InviteUserReq = {
 }
 
 export enum InviteUserCode {
-	Success = 1,
-	InvalidUser
+	Success = 1
 }
 
 type Success = {
@@ -24,4 +25,4 @@ type Failure = {
 
 export type InviteUserData = Success | Failure;
 
-export type InviteUserRes = (BaseRes<'InviteUser'> & InviteUserData) | ReqErrRes;
+export type InviteUserRes = (BaseRes<'InviteUser'> & InviteUserData) | ReqErrRes | NotAllowedErrRes | InvalidErrRes<InvalidType.Group | InvalidType.Vault | InvalidType.User>;

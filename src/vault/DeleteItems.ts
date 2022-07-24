@@ -1,5 +1,7 @@
 import { ContainerID, VaultID, ItemID } from "covrt-types";
 import { BaseRes } from "../Base";
+import { InvalidErrRes, InvalidType } from "../error/InvalidErr";
+import { NotAllowedErrRes } from "../error/NotAllowedErr";
 import { ReqErrRes } from "../error/ReqErr";
 
 export type DeleteItemsReq = {
@@ -9,10 +11,7 @@ export type DeleteItemsReq = {
 }
 
 export enum DeleteItemsCode {
-	Success = 1,
-	InvalidItems,
-    InvalidVault,
-    InvalidContainer
+	Success = 1
 }
 
 type Success = {
@@ -25,4 +24,4 @@ type Failure = {
 
 export type DeleteItemsData = Success | Failure;
 
-export type DeleteItemsRes = (BaseRes<'DeleteItems'> & DeleteItemsData) | ReqErrRes;
+export type DeleteItemsRes = (BaseRes<'DeleteItems'> & DeleteItemsData) | ReqErrRes | NotAllowedErrRes | InvalidErrRes<InvalidType.Container | InvalidType.Vault | InvalidType.Item>;

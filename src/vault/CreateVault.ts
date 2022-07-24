@@ -13,7 +13,6 @@ export type CreateVaultReq = {
 
 export enum CreateVaultCode {
 	Success = 1,
-	NotAllowed,
 	Duplicate
 }
 

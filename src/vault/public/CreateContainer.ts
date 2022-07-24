@@ -1,5 +1,7 @@
 import { AsymEnc, AsymEncType, ContainerID, EncKeyPair, KeyPairType, SymEnc, SymEncType } from "covrt-types";
 import { BaseRes } from "../../Base";
+import { InvalidErrRes, InvalidType } from "../../error/InvalidErr";
+import { NotAllowedErrRes } from "../../error/NotAllowedErr";
 import { ReqErrRes } from "../../error/ReqErr";
 
 export type CreateContainerReq = {
@@ -9,8 +11,7 @@ export type CreateContainerReq = {
 }
 
 export enum CreateContainerCode {
-	Success = 1,
-	InvalidVault
+	Success = 1
 }
 
 type Success = {
@@ -24,4 +25,4 @@ type Failure = {
 
 export type CreateContainerData = Success | Failure;
 
-export type CreateContainerRes = (BaseRes<'CreateContainer'> & CreateContainerData) | ReqErrRes;
+export type CreateContainerRes = (BaseRes<'CreateContainer'> & CreateContainerData) | ReqErrRes | NotAllowedErrRes | InvalidErrRes<InvalidType.Vault>;

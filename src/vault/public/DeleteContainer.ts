@@ -1,11 +1,8 @@
-import { ReqErrRes } from "../..";
+import { InvalidErrRes, InvalidType, NotAllowedErrRes, ReqErrRes } from "../..";
 import { BaseRes } from "../../Base";
 
 export enum DeleteContainerCode {
-	Success = 1,
-	InvalidVault,
-	InvalidContainer,
-	NotAllowed
+	Success = 1
 }
 
 type Success = {
@@ -18,4 +15,4 @@ type Failure = {
 
 export type DeleteContainerData = Success | Failure;
 
-export type DeleteContainerRes = (BaseRes<'DeleteContainer'> & DeleteContainerData) | ReqErrRes;
+export type DeleteContainerRes = (BaseRes<'DeleteContainer'> & DeleteContainerData) | ReqErrRes | NotAllowedErrRes | InvalidErrRes<InvalidType.Container | InvalidType.Vault>;

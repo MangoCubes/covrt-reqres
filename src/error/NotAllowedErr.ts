@@ -5,4 +5,4 @@ export type NotAllowedErrData = {
     res: PermType; //Missing permission
 }
 
-export type NotAllowedRes = BaseRes<'NotAllowed'> & NotAllowedErrData;
+export type NotAllowedErrRes = BaseRes<'NotAllowed'> & NotAllowedErrData;

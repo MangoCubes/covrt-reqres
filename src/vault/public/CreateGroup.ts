@@ -1,6 +1,8 @@
 import { EncKeyPair, GroupID, KeyPairType, SymEnc, SymEncType } from 'covrt-types';
 import { AsymEnc, AsymEncType } from 'covrt-types/dist/encryption/AsymEnc';
 import { BaseRes } from '../../Base';
+import { InvalidErrRes, InvalidType } from '../../error/InvalidErr';
+import { NotAllowedErrRes } from '../../error/NotAllowedErr';
 import { ReqErrRes } from '../../error/ReqErr';
 
 export type CreateGroupReq = {
@@ -13,7 +15,6 @@ export type CreateGroupReq = {
 
 export enum CreateGroupCode {
 	Success = 1,
-	NotAllowed,
 	InvalidPermission,
 	Private
 }
@@ -24,7 +25,7 @@ type Success = {
 }
 
 type DefaultRes = {
-	res: CreateGroupCode.NotAllowed | CreateGroupCode.Private;
+	res: Exclude<CreateGroupCode, CreateGroupCode.Private>;
 }
 
 type InvalidPermission = {
@@ -34,4 +35,4 @@ type InvalidPermission = {
 
 export type CreateGroupData = Success | DefaultRes | InvalidPermission;
 
-export type CreateGroupRes = (BaseRes<'CreateGroup'> & CreateGroupData) | ReqErrRes;
+export type CreateGroupRes = (BaseRes<'CreateGroup'> & CreateGroupData) | ReqErrRes | NotAllowedErrRes | InvalidErrRes<InvalidType.Vault>;

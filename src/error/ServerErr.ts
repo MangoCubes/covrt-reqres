@@ -6,7 +6,7 @@ export enum ServerErrCode {
 }
 
 type DefaultRes = {
-	res: ServerErrCode.Default | ServerErrCode.SQLErr;
+	res: ServerErrCode;
 }
 
 export type ServerErrData = DefaultRes;

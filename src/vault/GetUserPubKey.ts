@@ -1,5 +1,6 @@
 import { ExportedPubKey, KeyPairType, UserID } from "covrt-types";
 import { BaseRes } from "../Base";
+import { InvalidErrRes, InvalidType } from "../error/InvalidErr";
 import { ReqErrRes } from "../error/ReqErr";
 
 export type GetUserPubKeyReq = {
@@ -7,8 +8,7 @@ export type GetUserPubKeyReq = {
 }
 
 export enum GetUserPubKeyCode {
-	Success = 1,
-	InvalidUser
+	Success = 1
 }
 
 type Success = {
@@ -23,4 +23,4 @@ type Failure = {
 
 export type GetUserPubKeyData = Success | Failure;
 
-export type GetUserPubKeyRes = (BaseRes<'GetUserPubKey'> & GetUserPubKeyData) | ReqErrRes;
+export type GetUserPubKeyRes = (BaseRes<'GetUserPubKey'> & GetUserPubKeyData) | ReqErrRes | InvalidErrRes<InvalidType.User>;

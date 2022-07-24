@@ -5,7 +5,8 @@ export enum InvalidType {
     User,
     Group,
     Item,
-    Field
+    Field,
+    Container
 }
 
 export type InvalidErrData<T extends InvalidType> = {
