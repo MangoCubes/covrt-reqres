@@ -13,7 +13,7 @@ type Success = {
 }
 
 type Failure = {
-    res: Omit<DeleteContainerCode, DeleteContainerCode.Success>;
+    res: Exclude<DeleteContainerCode, DeleteContainerCode.Success>;
 }
 
 export type DeleteContainerData = Success | Failure;

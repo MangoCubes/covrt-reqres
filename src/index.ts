@@ -22,6 +22,7 @@ export * from './vault/GetAllContainerData';
 export * from './vault/GetContainerData';
 export * from './vault/GetContainers';
 export * from './vault/GetGroup';
+export * from './vault/GetUserPubKey';
 export * from './vault/GetVaultData';
 export * from './vault/GetVaults';
 

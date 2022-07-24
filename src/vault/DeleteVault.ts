@@ -12,7 +12,7 @@ type Success = {
 }
 
 type Failure = {
-    res: Omit<DeleteVaultCode, DeleteVaultCode.Success>;
+    res: Exclude<DeleteVaultCode, DeleteVaultCode.Success>;
 }
 
 export type DeleteVaultData = (Success | Failure);
