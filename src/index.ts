@@ -2,6 +2,8 @@ export * from './auth/Login';
 export * from './auth/Register';
 export * from './auth/TokenAuth';
 
+export * from './error/InvalidErr';
+export * from './error/NotAllowedErr';
 export * from './error/ReqErr';
 export * from './error/ServerErr';
 
