@@ -1,7 +1,6 @@
 import { GroupData } from "covrt-types";
 import { BaseRes } from "../Base";
 import { InvalidErrRes, InvalidType } from "../error/InvalidErr";
-import { NotAllowedErrRes } from "../error/NotAllowedErr";
 import { ReqErrRes } from "../error/ReqErr";
 
 export enum GetGroupCode {
@@ -19,4 +18,4 @@ type Failure = {
 
 export type GetGroupData = (Success | Failure);
 
-export type GetGroupRes = (BaseRes<'GetGroup'> & GetGroupData) | ReqErrRes | NotAllowedErrRes | InvalidErrRes<InvalidType.Vault>;
+export type GetGroupRes = (BaseRes<'GetGroup'> & GetGroupData) | ReqErrRes | InvalidErrRes<InvalidType.Vault>;

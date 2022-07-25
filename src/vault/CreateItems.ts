@@ -1,6 +1,7 @@
 import { ContainerID, EncItemData, ItemID } from "covrt-types";
 import { BaseRes } from "../Base";
-import { InvalidType } from "../error/InvalidErr";
+import { InvalidErrRes, InvalidType } from "../error/InvalidErr";
+import { NotAllowedErrRes } from "../error/NotAllowedErr";
 import { ReqErrRes } from "../error/ReqErr";
 
 export type CreateItemsReq = {

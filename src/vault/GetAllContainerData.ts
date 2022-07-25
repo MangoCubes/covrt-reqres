@@ -1,7 +1,6 @@
 import { FullEncContainerData, GroupData } from "covrt-types";
 import { BaseRes } from "../Base";
 import { InvalidErrRes, InvalidType } from "../error/InvalidErr";
-import { NotAllowedErrRes } from "../error/NotAllowedErr";
 import { ReqErrRes } from "../error/ReqErr";
 
 export enum GetAllContainerDataCode {
@@ -20,4 +19,4 @@ type Failure = {
 
 export type GetAllContainerDataData = (Success | Failure);
 
-export type GetAllContainerDataRes = (BaseRes<'GetAllContainerData'> & GetAllContainerDataData) | ReqErrRes | NotAllowedErrRes | InvalidErrRes<InvalidType.Vault>;
+export type GetAllContainerDataRes = (BaseRes<'GetAllContainerData'> & GetAllContainerDataData) | ReqErrRes | InvalidErrRes<InvalidType.Vault>;
