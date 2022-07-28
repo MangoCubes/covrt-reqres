@@ -25,7 +25,7 @@ type Success = {
 }
 
 type DefaultRes = {
-	res: Exclude<CreateGroupCode, CreateGroupCode.Private>;
+	res: Exclude<CreateGroupCode, CreateGroupCode.Success | CreateGroupCode.InvalidPermission>;
 }
 
 type InvalidPermission = {
