@@ -1,4 +1,4 @@
-import { VaultID } from 'covrt-types';
+import { AsymEnc, AsymEncType, VaultID } from 'covrt-types';
 import { BaseRes } from '../Base';
 import { ReqErrRes } from '../error/ReqErr';
 import { CreateContainerReq } from './public/CreateContainer';
@@ -6,7 +6,7 @@ import { CreateGroupReq } from './public/CreateGroup';
 
 export type CreateVaultReq = {
 	vault: string;
-	group: CreateGroupReq;
+	group: Omit<CreateGroupReq, 'groupAccessKey'> & {key: AsymEnc<AsymEncType.GroupSymKey>};
 	isPrivate: boolean;
 	container: CreateContainerReq;
 }
