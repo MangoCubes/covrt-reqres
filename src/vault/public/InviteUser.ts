@@ -1,18 +1,18 @@
-import { AsymEnc, AsymEncType, GroupID, VaultID } from "covrt-types";
+import { AsymEnc, AsymEncType, GroupID, UserID, VaultID } from "covrt-types";
 import { BaseRes } from "../../Base";
 import { InvalidErrRes, InvalidType } from "../../error/InvalidErr";
 import { NotAllowedErrRes } from "../../error/NotAllowedErr";
 import { ReqErrRes } from "../../error/ReqErr";
 
 export type InviteUserReq = {
-	vid: VaultID;
     gid: GroupID;
-    user: string; //Email
+    user: UserID;
     key: AsymEnc<AsymEncType.GroupSymKey>;
 }
 
 export enum InviteUserCode {
-	Success = 1
+	Success = 1,
+	Duplicate
 }
 
 type Success = {
