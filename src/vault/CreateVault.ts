@@ -6,7 +6,7 @@ import { CreateGroupReq } from './public/CreateGroup';
 
 export type CreateVaultReq = {
 	vault: string;
-	group: Omit<CreateGroupReq, 'groupAccessKey'> & {key: AsymEnc<AsymEncType.GroupSymKey>};
+	group: Omit<CreateGroupReq, 'groupAccessKey' | 'permissions'> & {key: AsymEnc<AsymEncType.GroupSymKey>};
 	isPrivate: boolean;
 	container: CreateContainerReq;
 }
