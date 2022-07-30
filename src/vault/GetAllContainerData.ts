@@ -1,4 +1,4 @@
-import { FullEncContainerData, GroupData } from "covrt-types";
+import { AsymEnc, AsymEncType, FullEncContainerData, GroupAccess, GroupID } from "covrt-types";
 import { BaseRes } from "../Base";
 import { InvalidErrRes, InvalidType } from "../error/InvalidErr";
 import { ReqErrRes } from "../error/ReqErr";
@@ -10,7 +10,11 @@ export enum GetAllContainerDataCode {
 type Success = {
 	res: GetAllContainerDataCode.Success;
 	data: FullEncContainerData[];
-	group: GroupData;
+	group: GroupAccess[];
+	groupAccess: {
+		gid: GroupID;
+		key: AsymEnc<AsymEncType.GroupSymKey>;
+	}
 }
 
 type Failure = {
