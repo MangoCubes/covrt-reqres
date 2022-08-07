@@ -1,4 +1,4 @@
-import { EncKeyPair, GroupID, KeyPairType, Permission, PermissionWithoutTarget, PermissionWithTarget, SymEnc, SymEncType } from 'covrt-types';
+import { ContainerID, EncKeyPair, GroupID, KeyPairType, Permission, PermissionWithoutTarget, PermissionWithTarget, SymEnc, SymEncType } from 'covrt-types';
 import { BaseRes } from '../../Base';
 import { InvalidErrRes, InvalidType } from '../../error/InvalidErr';
 import { NotAllowedErrRes } from '../../error/NotAllowedErr';
@@ -30,8 +30,12 @@ type DefaultRes = {
 
 type InvalidPermission = {
 	res: CreateGroupCode.InvalidPermission;
-	permission: PermissionWithoutTarget | PermissionWithTarget;
-}
+} & ({
+	permission: PermissionWithoutTarget;
+} | {
+	permission: PermissionWithTarget;
+	cid: ContainerID;
+})
 
 export type CreateGroupData = Success | DefaultRes | InvalidPermission;
 
